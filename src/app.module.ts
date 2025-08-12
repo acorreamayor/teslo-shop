@@ -7,6 +7,7 @@ import { EnvConfiguration } from './config/app.config';
 import { JoiValidationSchema } from './config/joi.validation';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
+import { CommonModule } from './common/common.module';
 
 
 @Module({
@@ -27,12 +28,28 @@ import { ProductsModule } from './products/products.module';
       synchronize: true,  // OJO esto es para generar estructuras
     }),
 
+
+    // TypeOrmModule.forRootAsync({
+    //   name: 'mssqlConn', // Aquí sí defines el nombre
+    //   useFactory: async () => ({
+    //     type: 'mssql',
+    //     host: 'PEE5AE2\\SQL2019',
+    //     port: 1433,
+    //     username: 'sainventario',
+    //     password: 'zeustecinv',
+    //     database: 'InventarioVsDesarrollo',
+    //     synchronize: false,
+    //     options: { encrypt: false },
+    //   }),
+    // }),    
+
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
 
     ProductsModule,
 
+    CommonModule,
 
   ],
   controllers: [],
