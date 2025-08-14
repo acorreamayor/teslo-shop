@@ -9,7 +9,10 @@ export const EnvConfiguration = () => ({
     dbusername: process.env.DB_USERNAME,
 
     port: process.env.PORT,
-    default_limit: +(process.env.DEFAULT_LIMIT || 10)
+    default_limit: +(process.env.DEFAULT_LIMIT || 10),
+
+    host_api: process.env.HOST_API
+
 
 });
 

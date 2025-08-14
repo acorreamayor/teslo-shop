@@ -13,5 +13,7 @@ export const JoiValidationSchema = Joi.object({
 
 
     PORT: Joi.number().default(3000),
-    DEFAULT_LIMIT: Joi.number().default(10)
+    DEFAULT_LIMIT: Joi.number().default(10),
+
+    HOST_API: Joi.string().default('http://localhost:3000/api')
 });
