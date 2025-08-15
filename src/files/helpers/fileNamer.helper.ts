@@ -5,8 +5,16 @@ export const fileNamer = ( req:Express.Request, file: Express.Multer.File, callb
 
     if (!file) return callback( new Error('File is empty'), false );
 
-    const fileExtension = file.mimetype.split('/')[1];
-    const fileName = `${ uuid() }.${ fileExtension }`;
+    const extension = file.mimetype.split('/')[1];
+    const fileName = `${ uuid() }.${ extension || '' }`;
 
     callback(null, fileName);
+}
+
+export const nombreNuevoUnico = ( mimetype: string ) => {
+
+    const extension = mimetype.split('/')[1];
+    const fileName = `${ uuid() }.${ extension || '' }`;
+
+    return fileName;
 }

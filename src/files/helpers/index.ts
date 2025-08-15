@@ -1,2 +1,2 @@
-export { fileFilter } from "./fileFilter.helper";
-export { fileNamer } from "./fileNamer.helper";
+export { fileFilter, fileFilterGeneral } from "./fileFilter.helper";
+export { fileNamer, nombreNuevoUnico } from "./fileNamer.helper";

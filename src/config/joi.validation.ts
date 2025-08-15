@@ -15,5 +15,14 @@ export const JoiValidationSchema = Joi.object({
     PORT: Joi.number().default(3000),
     DEFAULT_LIMIT: Joi.number().default(10),
 
-    HOST_API: Joi.string().default('http://localhost:3000/api')
+    HOST_API: Joi.string().default('http://localhost:3000/api'),
+
+    FILE_STORAGE_PROVIDER: Joi.string().default('NINGUNO'),
+
+    B2_APPLICATION_KEY_ID: Joi.string(),
+    B2_APPLICATION_KEY: Joi.string(),
+    B2_BUCKET_NAME: Joi.string(),
+    B2_DOWNLOAD_BASE_URL: Joi.string(),
+    B2_BUCKET_URL: Joi.string()
+    
 });
