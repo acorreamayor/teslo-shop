@@ -4,12 +4,14 @@ import { diskStorage, memoryStorage } from 'multer';
 import { Response } from 'express';
 import B2 = require('backblaze-b2');
 import axios from 'axios';
+import { ApiTags } from '@nestjs/swagger';
 
 import { FilesService } from './files.service';
 import { fileFilter, fileNamer, fileFilterGeneral, nombreNuevoUnico } from './helpers';
 import { Auth } from 'src/auth/decorator';
 
 
+@ApiTags('Files')
 @Controller('files')
 @Auth()
 export class FilesController {
