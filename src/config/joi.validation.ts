@@ -15,6 +15,8 @@ export const JoiValidationSchema = Joi.object({
     PORT: Joi.number().default(3000),
     DEFAULT_LIMIT: Joi.number().default(10),
 
+    JWT_SEED: Joi.string().required(),
+
     HOST_API: Joi.string().default('http://localhost:3000/api'),
 
     FILE_STORAGE_PROVIDER: Joi.string().default('NINGUNO'),

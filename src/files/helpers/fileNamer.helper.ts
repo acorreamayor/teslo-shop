@@ -1,5 +1,5 @@
 import { v7 as uuid }  from 'uuid';
-
+import * as path from "path";
 
 export const fileNamer = ( req:Express.Request, file: Express.Multer.File, callback: Function ) => {
 
@@ -11,10 +11,12 @@ export const fileNamer = ( req:Express.Request, file: Express.Multer.File, callb
     callback(null, fileName);
 }
 
-export const nombreNuevoUnico = ( mimetype: string ) => {
+export const nombreNuevoUnico = ( originalname: string ) => {
 
-    const extension = mimetype.split('/')[1];
-    const fileName = `${ uuid() }.${ extension || '' }`;
+    const extension = path.extname(originalname);
+    const fileName = `${ uuid() }${ extension }`;
+
+    // console.log({ originalname, fileName, extension });
 
     return fileName;
 }

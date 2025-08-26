@@ -13,6 +13,8 @@ export const EnvConfiguration = () => ({
 
     host_api: process.env.HOST_API,
 
+    jwt_seed: process.env.JWT_SEED,
+    
     file_storage_provider: process.env.FILE_STORAGE_PROVIDER || 'NINGUNO',
 
     b2_application_key_id: process.env.B2_APPLICATION_KEY_ID,

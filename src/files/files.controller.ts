@@ -7,9 +7,11 @@ import axios from 'axios';
 
 import { FilesService } from './files.service';
 import { fileFilter, fileNamer, fileFilterGeneral, nombreNuevoUnico } from './helpers';
+import { Auth } from 'src/auth/decorator';
 
 
 @Controller('files')
+@Auth()
 export class FilesController {
 
   private b2: B2;
@@ -89,7 +91,7 @@ export class FilesController {
     const { data: uploadData } = await this.b2.getUploadUrl({ bucketId });
 
     // 3️⃣ Generar nombre único y subir el archivo desde buffer
-    const newFileName = nombreNuevoUnico(file.mimetype);
+    const newFileName = nombreNuevoUnico(file.originalname);
 
     await this.b2.uploadFile({
       uploadUrl: uploadData.uploadUrl,
