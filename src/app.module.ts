@@ -11,6 +11,8 @@ import { CommonModule } from './common/common.module';
 import { SeedModule } from './seed/seed.module';
 import { FilesModule } from './files/files.module';
 import { AuthModule } from './auth/auth.module';
+import { FileUploadedModule } from './file_uploaded/file_uploaded.module';
+import { DocumentUploadedModule } from './document_uploaded/document_uploaded.module';
 
 
 @Module({
@@ -20,6 +22,7 @@ import { AuthModule } from './auth/auth.module';
       validationSchema: JoiValidationSchema
     }),
 
+
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST,
@@ -28,7 +31,7 @@ import { AuthModule } from './auth/auth.module';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
-      synchronize: true,  // OJO esto es para generar estructuras
+      // synchronize: true,  // OJO esto es para generar estructuras
     }),
 
 
@@ -59,6 +62,11 @@ import { AuthModule } from './auth/auth.module';
     FilesModule,
 
     AuthModule,
+
+    FileUploadedModule,
+
+    DocumentUploadedModule,
+
 
   ],
   controllers: [],

@@ -20,3 +20,16 @@ export const nombreNuevoUnico = ( originalname: string ) => {
 
     return fileName;
 }
+
+export const esImagen  = ( originalname: string ) => {
+
+    const validExtension = ['.jpg', '.jpeg', '.png', '.gif'];   // Se recomienda que sea variables de entorno
+    const extension = path.extname(originalname);
+
+    if ( validExtension.includes( extension ) ) {
+        return true;
+    } else {
+        return false;
+    } 
+
+}

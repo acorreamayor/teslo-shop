@@ -9,7 +9,7 @@ import { ApiTags } from '@nestjs/swagger';
 export class SeedController {
   constructor(private readonly seedService: SeedService) {}
 
-  @Auth(ValidRoles.admin)
+  // @Auth(ValidRoles.admin)
   @Get()
   executeSeed() {
     return this.seedService.runSeed();
