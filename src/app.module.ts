@@ -13,6 +13,7 @@ import { FilesModule } from './files/files.module';
 import { AuthModule } from './auth/auth.module';
 import { FileUploadedModule } from './file_uploaded/file_uploaded.module';
 import { DocumentUploadedModule } from './document_uploaded/document_uploaded.module';
+import { KnowledgeBaseModule } from './knowledge_base/knowledge_base.module';
 
 
 @Module({
@@ -66,6 +67,8 @@ import { DocumentUploadedModule } from './document_uploaded/document_uploaded.mo
     FileUploadedModule,
 
     DocumentUploadedModule,
+
+    KnowledgeBaseModule,
 
 
   ],

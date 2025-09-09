@@ -9,6 +9,7 @@ import { Product } from './entities/product.entity';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { ProductImage } from './entities';
 import { User } from '../auth/entities/user.entity';
+import { ShowError } from '../common/helpers';
 
 @Injectable()
 export  class ProductsService {
@@ -49,7 +50,7 @@ export  class ProductsService {
       return { ...product, images: images };
 
     } catch(error) {
-      this.handleExceptions(error);
+      ShowError(error);
     }
   }
 
@@ -163,7 +164,7 @@ export  class ProductsService {
         await queryRunner.rollbackTransaction();
         await queryRunner.release();
 
-        this.handleExceptions(error);
+        ShowError(error);
       }      
 
       return product;
@@ -177,7 +178,7 @@ export  class ProductsService {
       await this.productRepository.delete({ id: id });
 
     } catch(error) {
-      this.handleExceptions(error);
+      ShowError(error);
     }
   }
 
@@ -194,19 +195,8 @@ export  class ProductsService {
         .execute();
 
     } catch(error) {
-      this.handleExceptions(error);
+      ShowError(error);
     }
   }
 
-  private handleExceptions( error: any ) {
-    this.logger.error(error);
-
-    if (error.detail)
-      throw new BadRequestException(error.detail);
-
-    if (error.where)
-      throw new BadRequestException(error.where);
-
-    throw new InternalServerErrorException(error);
-}
 }
