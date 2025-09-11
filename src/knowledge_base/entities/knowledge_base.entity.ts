@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, UpdateDateColumn, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn, UpdateDateColumn, JoinColumn, OneToMany } from 'typeorm';
 import { User } from '../../auth/entities/user.entity';
+import {  KnowledgeBasesFilesuploaded } from '../../knowledge_bases_filesuploaded/entities/knowledge_bases_filesuploaded.entity';
 
 @Entity('knowledge_bases')
 export class KnowledgeBase {
@@ -24,4 +25,8 @@ export class KnowledgeBase {
   @ManyToOne(() => User, (user) => user.id, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'userId' }) 
   user: User;
+
+  // 🔹 Relación con los archivos (tabla intermedia)
+    @OneToMany(() => KnowledgeBasesFilesuploaded, (kbFile) => kbFile.knowledgeBase)
+  files: KnowledgeBasesFilesuploaded[];  
 }

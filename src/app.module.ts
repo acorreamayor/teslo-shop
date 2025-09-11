@@ -14,6 +14,7 @@ import { AuthModule } from './auth/auth.module';
 import { FileUploadedModule } from './file_uploaded/file_uploaded.module';
 import { DocumentUploadedModule } from './document_uploaded/document_uploaded.module';
 import { KnowledgeBaseModule } from './knowledge_base/knowledge_base.module';
+import { KnowledgeBasesFilesuploadedModule } from './knowledge_bases_filesuploaded/knowledge_bases_filesuploaded.module';
 
 
 @Module({
@@ -69,6 +70,8 @@ import { KnowledgeBaseModule } from './knowledge_base/knowledge_base.module';
     DocumentUploadedModule,
 
     KnowledgeBaseModule,
+
+    KnowledgeBasesFilesuploadedModule,
 
 
   ],

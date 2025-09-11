@@ -13,6 +13,7 @@ import { AuthModule } from 'src/auth/auth.module';
     FileUploadedModule, 
     AuthModule
     
-  ]
+  ],
+  exports: [FilesService],
 })
 export class FilesModule {}

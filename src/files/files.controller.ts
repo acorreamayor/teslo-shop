@@ -27,8 +27,9 @@ export class FilesController {
       storage: memoryStorage() // ⬅ Archivo en memoria
     })
   )
-  async upload(@UploadedFile() file: Express.Multer.File,
-               @Query('validateImage') validateImage?: string  // validateImage = 'true' si quiere validar imagenes
+  async upload(
+            @UploadedFile() file: Express.Multer.File,
+            @Query('validateImage') validateImage?: string  // validateImage = 'true' si quiere validar imagenes
             ) {
 
     // Si pidieron validar imagen
@@ -39,6 +40,7 @@ export class FilesController {
     }
 
     const fileUploaded = await this.filesService.upload( file );
+    
     return fileUploaded;
 
   }

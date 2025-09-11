@@ -5,14 +5,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DocumentUploadedService } from './document_uploaded.service';
 import { DocumentUploadedController } from './document_uploaded.controller';
 import { DocumentUploaded } from './entities/document_uploaded.entity';
+import { FileUploadedModule } from '../file_uploaded/file_uploaded.module';
 
 @Module({
   controllers: [DocumentUploadedController],
   providers: [DocumentUploadedService],
   imports: [
     ConfigModule,
-    TypeOrmModule.forFeature([DocumentUploaded])
-    //AuthModule
+    TypeOrmModule.forFeature([DocumentUploaded]),
+    FileUploadedModule,
   ],
   exports: [DocumentUploadedService, TypeOrmModule]
 })
