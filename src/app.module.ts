@@ -15,6 +15,14 @@ import { FileUploadedModule } from './file_uploaded/file_uploaded.module';
 import { DocumentUploadedModule } from './document_uploaded/document_uploaded.module';
 import { KnowledgeBaseModule } from './knowledge_base/knowledge_base.module';
 import { KnowledgeBasesFilesuploadedModule } from './knowledge_bases_filesuploaded/knowledge_bases_filesuploaded.module';
+import { ParameterModule } from './parameter/parameter.module';
+import { OrganizationModule } from './organization/organization.module';
+import { ParameterUserModule } from './parameter_user/parameter_user.module';
+import { ParameterOrganizationModule } from './parameter_organization/parameter_organization.module';
+import { ParameterUserOrganizationModule } from './parameter_user_organization/parameter_user_organization.module';
+import { ToolModule } from './tool/tool.module';
+import { ParameterToolModule } from './parameter_tool/parameter_tool.module';
+import { ToolGroupModule } from './tool_group/tool_group.module';
 
 
 @Module({
@@ -72,6 +80,22 @@ import { KnowledgeBasesFilesuploadedModule } from './knowledge_bases_filesupload
     KnowledgeBaseModule,
 
     KnowledgeBasesFilesuploadedModule,
+
+    ParameterModule,
+
+    OrganizationModule,
+
+    ParameterUserModule,
+
+    ParameterOrganizationModule,
+
+    ParameterUserOrganizationModule,
+
+    ToolModule,
+
+    ParameterToolModule,
+
+    ToolGroupModule,
 
 
   ],
